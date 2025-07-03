@@ -1,59 +1,81 @@
-# MyAmzEcom
+# ng-ecommerce
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+This Angular repo will be used to build a full-featured e-commerce application.  
+This README documents the base folder structure and planned setup steps.
 
-## Development server
+------------------------------------------------------------
+📁 /src/app
 
-To start a local development server, run:
+├── core/               => Singleton services, HTTP interceptors, route guards
+│   - AuthService
+│   - TokenInterceptor
+│   - AuthGuard
+│   - CoreModule
+│
+├── shared/             => Reusable components, pipes, directives
+│   - SharedModule
+│   - ButtonComponent
+│   - CardComponent
+│
+├── features/           => Feature modules for business logic
+│   ├── home/
+│   ├── product/
+│   ├── cart/
+│   └── user/
+│
+├── layouts/            => App layouts (e.g., main layout, auth layout)
+│   - HeaderComponent
+│   - FooterComponent
+│   - MainLayoutComponent
+│   - AuthLayoutComponent
+│
+├── app-routing.module.ts  => App-level routes
+├── app.module.ts          => Root module
+├── app.component.ts       => Root component
+└── app.component.html     => App shell
 
-```bash
-ng serve
-```
+------------------------------------------------------------
+📁 /src
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+├── environments/
+│   - environment.ts
+│   - environment.prod.ts
 
-## Code scaffolding
+├── styles.scss           => Global styles and theme setup (using SCSS)
+│   - Define SCSS variables here for color, font, etc.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+------------------------------------------------------------
+✅ Planned Initial Tasks (Next Steps)
 
-```bash
-ng generate component component-name
-```
+- [ ] Setup Angular Material + Flex Layout
+- [ ] Create CoreModule and SharedModule
+- [ ] Create HomeModule (lazy-loaded route)
+- [ ] Add dummy Header/Footer in layouts
+- [ ] Setup routing with layout support
+- [ ] Add environment config for API base URL
+- [ ] Add ngx-toastr and uuid for utility support
+- [ ] ESLint + Prettier integration
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+------------------------------------------------------------
+📝 Quick Notes
 
-```bash
-ng generate --help
-```
+- App follows modular structure for maintainability
+- SCSS is used for better theming and organization
+- Routes will be lazy-loaded for performance
+- CoreModule is imported **only** in AppModule
+- SharedModule can be reused across features
 
-## Building
+------------------------------------------------------------
+🔧 Commands Used to Generate Base Setup
 
-To build the project run:
+ng new ng-ecommerce --routing --style=scss  
+cd ng-ecommerce  
+ng g module core  
+ng g module shared  
+ng g c layouts/main-layout  
+ng g c layouts/auth-layout  
+ng add @angular/material  
+npm install @angular/flex-layout ngx-toastr uuid
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+------------------------------------------------------------
+# End of Base Setup

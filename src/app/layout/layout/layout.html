@@ -1,3 +1,29 @@
-<router-outlet/>
-<shop-header></shop-header>
-<shop-footer></shop-footer>
+<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+  <!-- Header -->
+  <header class="bg-gray-100 shadow">
+    <shop-header></shop-header>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="overflow-y-auto">
+    <div
+      class="flex h-full"
+      [ngClass]="{ 'gap-4': sidebarVisible }"
+    >
+      @if(sidebarVisible){
+        <aside class="w-64 bg-gray-50">
+          <ng-content select="[menu]"></ng-content>
+        </aside>
+      }
+
+      <div class="flex-1 min-w-0">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 shadow mt-auto">
+    <shop-footer></shop-footer>
+  </footer>
+</div>

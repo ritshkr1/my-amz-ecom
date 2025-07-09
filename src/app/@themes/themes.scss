@@ -1,0 +1,28 @@
+@use 'tailwindcss';
+
+@theme{
+  --color-primary-app-color: oklch(91.766% 0.02678 34.977);
+  --color-primary-app-color-50: oklch(100% 0 none);
+  --color-primary-app-color-100: oklch(100% 0 none);
+  --color-primary-app-color-200: oklch(100% 0 none);
+  --color-primary-app-color-300: oklch(100% 0 none);
+  --color-primary-app-color-400: oklch(98.49% 0.00449 34.309);
+  --color-primary-app-color-500: oklch(91.766% 0.02678 34.977);
+  --color-primary-app-color-600: oklch(82.403% 0.06107 35.005);
+  --color-primary-app-color-700: oklch(73.192% 0.09688 34.699);
+  --color-primary-app-color-800: oklch(64.756% 0.13499 35.822);
+  --color-primary-app-color-900: oklch(56.162% 0.15001 35.636);
+  --color-primary-app-color-950: oklch(51.364% 0.13543 35.404);
+  --color-secondary-app-color: oklch(39.838% 0.02321 34.356);
+  --color-secondary-app-color-50: oklch(71.205% 0.0248 34.306);
+  --color-secondary-app-color-100: oklch(67.817% 0.0275 32.899);
+  --color-secondary-app-color-200: oklch(61.002% 0.03489 32.649);
+  --color-secondary-app-color-300: oklch(53.999% 0.03356 33.761);
+  --color-secondary-app-color-400: oklch(47.176% 0.02782 34.358);
+  --color-secondary-app-color-500: oklch(39.838% 0.02321 34.356);
+  --color-secondary-app-color-600: oklch(29.15% 0.01541 31.239);
+  --color-secondary-app-color-700: oklch(17.632% 0.00543 39.346);
+  --color-secondary-app-color-800: oklch(0% 0 none);
+  --color-secondary-app-color-900: oklch(0% 0 none);
+  --color-secondary-app-color-950: oklch(0% 0 none);
+}

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, effect,computed } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { Logo } from './logo/logo';
+import { ToggleSidebarService } from 'src/app/common/services/toggle-sidebar';
+
 
 @Component({
   selector: 'shop-header',
@@ -9,15 +11,23 @@ import { Logo } from './logo/logo';
   styleUrl: './header.scss'
 })
 export class Header {
-  sidebarToggle: boolean = false;
+  sidebarToggle = computed(() => {
+    console.log("sidebarToggle called");
+    return this.toggleService.toggleSidebar()});
   menuToggleMobile: boolean = false;
   darkMode: boolean = false;
   dropdownOpen:boolean = false;
   notifying:boolean = true;
   isProfileOpen:boolean = false
 
+  private toggleService = inject(ToggleSidebarService);
+
+  constructor(){}
+
   toggleSidebar(){
-    this.sidebarToggle = !this.sidebarToggle;
+    if(this.sidebarToggle() === false){
+      this.toggleService.open();
+    }
   }
 
   menuToggleMob(){

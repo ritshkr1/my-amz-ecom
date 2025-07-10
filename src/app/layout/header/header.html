@@ -10,7 +10,7 @@
     >
       <!-- Hamburger Toggle BTN -->
       <button
-        [ngClass]="sidebarToggle ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-gray-800' : ''"
+        [ngClass]="sidebarToggle() ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-gray-800' : ''"
         class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg border-gray-200 text-gray-500 lg:h-11 lg:w-11 lg:border dark:border-gray-800 dark:text-gray-400"
         (click)="toggleSidebar()"
       >
@@ -31,7 +31,7 @@
         </svg>
 
         <svg
-          [ngClass]="sidebarToggle ? 'hidden' : 'block lg:hidden'"
+          [ngClass]="sidebarToggle() ? 'hidden' : 'block lg:hidden'"
           class="fill-current lg:hidden"
           width="24"
           height="24"
@@ -49,7 +49,7 @@
 
         <!-- cross icon -->
         <svg
-          [ngClass]="sidebarToggle ? 'block lg:hidden' : 'hidden'"
+          [ngClass]="sidebarToggle() ? 'block lg:hidden' : 'hidden'"
           class="fill-current"
           width="24"
           height="24"

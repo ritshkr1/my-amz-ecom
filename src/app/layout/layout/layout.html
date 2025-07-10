@@ -10,10 +10,11 @@
       class="flex h-full"
       [ngClass]="{ 'gap-4': sidebarVisible }"
     >
-      @if(sidebarVisible){
-        <aside class="w-64 bg-gray-50">
+      @if(sidebarVisible()){
+        <!-- <aside class="w-64 bg-gray-50">
           <ng-content select="[menu]"></ng-content>
-        </aside>
+        </aside> -->
+        <shop-sidebar class="w-64 bg-gray-100"/>
       }
 
       <div class="flex-1 min-w-0">

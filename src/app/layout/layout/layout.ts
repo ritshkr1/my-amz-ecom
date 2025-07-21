@@ -8,7 +8,7 @@ import { ToggleSidebarService } from 'src/app/common/services/toggle-sidebar';
 
 @Component({
   selector: 'shop-layout',
-  imports: [RouterOutlet,Header,Footer,Sidebar,NgClass],
+  imports: [RouterOutlet,Header,Footer,Sidebar],
   templateUrl: './layout.html',
 })
 export class Layout {

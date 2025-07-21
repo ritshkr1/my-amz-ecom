@@ -1,30 +1,30 @@
-<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
-  <!-- Header -->
-  <header class="bg-gray-100 shadow">
+<div class="h-screen grid grid-rows-[auto_1fr_auto]">
+  <!-- Fixed Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-100 shadow">
     <shop-header></shop-header>
   </header>
 
-  <!-- Main Content Area -->
-  <main class="overflow-y-auto">
-    <div
-      class="flex h-full"
-      [ngClass]="{ 'gap-4': sidebarVisible }"
-    >
-      @if(sidebarVisible()){
-        <!-- <aside class="w-64 bg-gray-50">
-          <ng-content select="[menu]"></ng-content>
-        </aside> -->
-        <shop-sidebar class="w-64 bg-gray-100"/>
-      }
+  <!-- Spacer for header -->
+  <div class="h-[64px]"></div>
+  <!-- Adjust height as per header -->
 
-      <div class="flex-1 min-w-0">
-        <router-outlet></router-outlet>
-      </div>
+  <!-- Main Content Area -->
+  <main class="flex flex-1 overflow-hidden">
+    @if(sidebarVisible()){
+    <shop-sidebar class="w-64 bg-gray-100 overflow-y-auto min-h-[600px]" />
+    }
+
+    <div class="flex-1 min-w-0 overflow-y-auto">
+      <router-outlet></router-outlet>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 shadow mt-auto">
+  <!-- Spacer for footer -->
+  <div class="h-[56px]"></div>
+  <!-- Adjust height as per footer -->
+
+  <!-- Fixed Footer -->
+  <footer class="fixed bottom-0 left-0 right-0 z-50 bg-gray-100 shadow">
     <shop-footer></shop-footer>
   </footer>
 </div>

@@ -189,14 +189,23 @@
             </div>
           </div>
 
-          <!-- <div class="max-w-full overflow-x-auto custom-scrollbar">
-            <div class="-ml-5 min-w-[650px] pl-2 xl:min-w-full">
-              <div
+          <div class="max-w-full overflow-x-auto custom-scrollbar h-[250px]">
+            <canvas
+              class="-ml-5 min-w-[650px] pl-2 xl:min-w-full"
+              style="height: 250px; padding: 15px"
+              baseChart
+              [data]="barChartData"
+              [options]="barChartOptions"
+              [type]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+            >
+            </canvas>
+            <!-- <div
                 id="chartOne"
                 class="-ml-5 h-full min-w-[650px] pl-2 xl:min-w-full"
-              ></div>
-            </div>
-          </div> -->
+              ></div> -->
+          </div>
         </div>
 
         <!-- ====== Chart One End -->
